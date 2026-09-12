@@ -1,15 +1,12 @@
 # Cozy Bites 🍽️
 
-<div align="center">
+### [🚀 Live Demo — cozy-bites-deploy.vercel.app](https://cozy-bites-deploy.vercel.app)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-2EC4B6?style=for-the-badge)](https://cozy-bites-deploy.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/Samanaaziz0/cozy-bites)
+<p align="center">
+<a href="https://cozy-bites-deploy.vercel.app"><img src="https://img.shields.io/badge/🌐_OPEN_LIVE_SITE-Click_Here-2EC4B6?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+</p>
 
-**Western Bistro restaurant app — menu browsing, reservations, dine-in & online orders, loyalty rewards, and admin panel.**
-
-[**→ Try it live**](https://cozy-bites-deploy.vercel.app)
-
-</div>
+> Western Bistro restaurant app — menu browsing, reservations, dine-in & online orders, loyalty rewards, and admin panel.
 
 ---
 
