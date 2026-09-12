@@ -1,4 +1,21 @@
-# Western Bistro — Flask + MongoDB + HTML/CSS/JS
+# Cozy Bites 🍽️
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Site-2EC4B6?style=for-the-badge)](https://cozy-bites-deploy.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=for-the-badge&logo=github)](https://github.com/Samanaaziz0/cozy-bites)
+
+**Western Bistro restaurant app — menu browsing, reservations, dine-in & online orders, loyalty rewards, and admin panel.**
+
+[**→ Try it live**](https://cozy-bites-deploy.vercel.app)
+
+</div>
+
+---
+
+## Stack
+
+Flask + MongoDB + HTML/CSS/JavaScript
 
 Three files:
 
