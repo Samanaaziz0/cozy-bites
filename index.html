@@ -307,6 +307,70 @@ main{max-width:1400px;margin:0 auto;padding:1.8rem 1.5rem 5rem;}
 .hidden{display:none!important;}
 footer{background:var(--brown);color:rgba(255,255,255,.7);text-align:center;padding:1.8rem;font-size:.82rem;}
 footer strong{color:var(--gold-light);}
+
+/* HAMBURGER MENU */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:.4rem;z-index:300;}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--brown);border-radius:2px;transition:all .3s;margin:5px 0;}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+@media(max-width:900px){
+  .hamburger{display:block;}
+  .nav-wrap{position:relative;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(253,246,237,.98);backdrop-filter:blur(12px);flex-direction:column;padding:.8rem 1.2rem;gap:.2rem;border-bottom:1px solid rgba(201,149,76,.2);box-shadow:0 8px 24px rgba(61,35,20,.1);z-index:200;}
+  .nav-links.open{display:flex;}
+  .nav-btn{width:100%;text-align:left;padding:.65rem 1rem;border-radius:12px;font-size:.92rem;}
+  .nav-right{gap:.4rem;}
+  .cart-pill{padding:.35rem .7rem;font-size:.8rem;}
+  .user-pill{padding:.35rem .7rem;font-size:.78rem;}
+  .halal-badge{font-size:.6rem;padding:.15rem .4rem;}
+}
+
+@media(max-width:600px){
+  main{padding:1rem .8rem 3rem;}
+  .hero{padding:1.5rem;min-height:auto;border-radius:var(--radius);}
+  .hero h1{font-size:1.7rem;}
+  .hero p{font-size:.88rem;}
+  .hero-btns .btn{width:100%;justify-content:center;font-size:.82rem;padding:.55rem 1rem;}
+  .features-grid{grid-template-columns:1fr 1fr;gap:.7rem;}
+  .feature-card{padding:.9rem;}
+  .feature-card .icon{font-size:1.4rem;}
+  .feature-card h3{font-size:.88rem;}
+  .feature-card p{font-size:.75rem;}
+  .menu-grid{grid-template-columns:1fr;gap:1rem;}
+  .menu-card .img-wrap{height:160px;}
+  .card{padding:1.1rem;border-radius:var(--radius);}
+  .sec-head h2{font-size:1.4rem;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .events-grid{grid-template-columns:1fr;}
+  .tier-cards{grid-template-columns:1fr 1fr;}
+  .offer-banner{font-size:.68rem;padding:.45rem .5rem;}
+  .logo{font-size:1.3rem;}
+  .logo small{font-size:.45rem;letter-spacing:2.5px;}
+  .cat-filter{gap:.3rem;}
+  .cat-btn{padding:.35rem .7rem;font-size:.75rem;}
+  .ot-tabs{width:100%;}
+  .ot-tab{flex:1;text-align:center;padding:.4rem .6rem;font-size:.8rem;}
+  .table-map{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));}
+  .bill-box{padding:1.1rem;}
+  .loy-hero{padding:1.3rem;border-radius:var(--radius);}
+  .loy-hero h2{font-size:1.3rem;}
+  .stats-row{gap:1rem;}
+  .stat .num{font-size:1.5rem;}
+  .about-grid img{height:220px;}
+  .admin-grid{grid-template-columns:1fr 1fr;}
+  .modal-box{padding:1.3rem;border-radius:var(--radius);}
+  .modal-box h2{font-size:1.2rem;}
+  .toast{left:1rem;right:1rem;max-width:none;font-size:.82rem;}
+}
+@media(max-width:380px){
+  .features-grid{grid-template-columns:1fr;}
+  .tier-cards{grid-template-columns:1fr;}
+  .admin-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:1.5rem;}
+  .nav-right .halal-badge{display:none;}
+}
 </style>
 </head>
 <body>
@@ -319,7 +383,10 @@ footer strong{color:var(--gold-light);}
       WESTERN<span>BISTRO</span>
       <small>Halal · Est. 2012 · Downtown</small>
     </div>
-    <div class="nav-links">
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
       <button class="nav-btn active" data-page="home">Home</button>
       <button class="nav-btn" data-page="menu">Menu</button>
       <button class="nav-btn" data-page="gallery">Gallery</button>
@@ -912,7 +979,9 @@ function switchPage(id){
   if(id==='home'){renderFeatured();}
   window.scrollTo(0,0);
 }
-document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>switchPage(b.dataset.page)));
+document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>{switchPage(b.dataset.page);closeMobileNav();}));
+function toggleMobileNav(){const n=document.getElementById('nav-links'),h=document.getElementById('hamburger');n.classList.toggle('open');h.classList.toggle('open');}
+function closeMobileNav(){const n=document.getElementById('nav-links'),h=document.getElementById('hamburger');if(n)n.classList.remove('open');if(h)h.classList.remove('open');}
 
 /* ========== CART (kept in localStorage for convenience) ========== */
 function saveCart(){localStorage.setItem('wb_cart',JSON.stringify(cart));updateCartBadge();}
